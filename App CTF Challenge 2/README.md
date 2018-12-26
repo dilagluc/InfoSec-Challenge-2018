@@ -59,11 +59,10 @@ Back to the **checkSerial** function. It seems like it calls the **encrypt** fun
 Like every (or most of them) Android application, this application has an *assets* directory. Surprise surprise, there is only one file in there - **db.db**.<br>
 Using _binwalk_ command, we can find out the it's a SQLite 3 database.<br><br>
 
-Let's run the query that **checkSerial** runs:
+Let's run the query that **checkSerial** runs:  
 ```sql
 sqlite> select * from e052bcf4c08a5c3478;
 1337133713371337BAADF0000DAAAAAA|FE5A10236842EF551087301E8B17EEFB|:3
-
 ```
 Great. Now we got the key and the IV. So for getting the actual serial, we should decrypt the hexstring in *6f4e8fff1523407fabf1e6ba7abcc585129e3802f785a75f28b0e63482449f5347501f6b38f014ae4f51e37ffb9b323b*.<br><br>
 
