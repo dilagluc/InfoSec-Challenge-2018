@@ -55,7 +55,7 @@ private String encrypt(String message, String key, String iv) {
 ```
 The function gets the message to encrypt, the key and the IV (in that order). It will create some instances of cipher, and it's pretty obvious that it will use AES-CBC with PKCS#5 padding. Ok neat :sunglasses:.<br>
 
-Back to the **checkSerial** function. It seems like it calls the **encrypt** function with the user's input as the message, the first string from the database as the IV, and the second string from the database as the key.<br>
+Back to the **checkSerial** function. It seems like it calls the **encrypt** function with the user's input as the message, the first string from the database as the IV, and the second string from the database as the key.<br><br>
 Like every (or most of them) Android application, this application has an *assets* directory. Surprise surprise, there is only one file in there - **db.db**.<br>
 Using _binwalk_ command, we can find out the it's a SQLite 3 database.<br><br>
 
