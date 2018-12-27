@@ -47,7 +47,7 @@ Continuing to the next block.<br>
 5ca:	bf04      	itt	eq
 5cc:	7b20      	ldrbeq	r0, [r4, #12]
 5ce:	2866      	cmpeq	r0, #102	; 0x66
-5d0:	d141      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>	;656
+5d0:	d141      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>
 ```
 The 19th letter getting loaded to r0, and compared to the value 115 ("s").<br>
 Using ARM "EQ" magic, if the letter equals to "s", then the 13th letter getting loaded and compared to the value 102 ("f").<br>. If the 19th letter is not equal to "s" or the 13th letter is not equal to "f", then the program will jump to ```<Java_com_ctf_app3_MainActivity_check@@Base+0xaa>``` (not good).<br><br>
@@ -60,35 +60,35 @@ The next few blocks are pretty much the same.
  5d6:	bf04      	itt	eq
  5d8:	7c20      	ldrbeq	r0, [r4, #16]
  5da:	2868      	cmpeq	r0, #104	; 0x68
- 5dc:	d13b      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>	;656
+ 5dc:	d13b      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>
  --------------------------------------------------------------------------------------
  5de:	7ae0      	ldrb	r0, [r4, #11]
  5e0:	285f      	cmp	r0, #95	; 0x5f
  5e2:	bf04      	itt	eq
  5e4:	7b60      	ldrbeq	r0, [r4, #13]
  5e6:	2865      	cmpeq	r0, #101	; 0x65
- 5e8:	d135      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>	;656
+ 5e8:	d135      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>
  --------------------------------------------------------------------------------------
  5ea:	7aa0      	ldrb	r0, [r4, #10]
  5ec:	2864      	cmp	r0, #100	; 0x64
  5ee:	bf04      	itt	eq
  5f0:	78e0      	ldrbeq	r0, [r4, #3]
  5f2:	285f      	cmpeq	r0, #95	; 0x5f
- 5f4:	d12f      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>	;656
+ 5f4:	d12f      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>
  --------------------------------------------------------------------------------------
  5f6:	7d60      	ldrb	r0, [r4, #21]
  5f8:	2865      	cmp	r0, #101	; 0x65
  5fa:	bf04      	itt	eq
  5fc:	7be0      	ldrbeq	r0, [r4, #15]
  5fe:	285f      	cmpeq	r0, #95	; 0x5f
- 600:	d129      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>	;656
+ 600:	d129      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>
  --------------------------------------------------------------------------------------
  602:	7da0      	ldrb	r0, [r4, #22]
  604:	2874      	cmp	r0, #116	; 0x74
  606:	bf04      	itt	eq
  608:	7a60      	ldrbeq	r0, [r4, #9]
  60a:	2869      	cmpeq	r0, #105	; 0x69
- 60c:	d123      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>	;656
+ 60c:	d123      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>
  --------------------------------------------------------------------------------------
  60e:	7960      	ldrb	r0, [r4, #5]
  610:	286e      	cmp	r0, #110	; 0x6e
