@@ -125,7 +125,7 @@ The next few blocks are pretty much the same.
  646:	2864      	cmpeq	r0, #100	; 0x64
  648:	d105      	bne.n	656 <Java_com_ctf_app3_MainActivity_check@@Base+0xaa>
 ```
-If you'll follow the blocks, you'll get that the flag is <span>t h e _ _ n d r o i d _ f e d _ h _ s _ p e t s </span> (where only the 5th and the 18th letters are missing). It pretty easy to guess what they are, but let check the last block.<br><br>
+If you'll follow the blocks, you'll get that the flag is <span>t h e _ _ n d r o i d _ f e d _ h _ s _ p e t s </span> (where only the 5th and the 18th letters are missing). It pretty easy to guess what they are, but let's check the last block.<br><br>
 ``` assembly
 64a:	7c60      	ldrb	r0, [r4, #17]
 64c:	2869      	cmp	r0, #105	; 0x69
