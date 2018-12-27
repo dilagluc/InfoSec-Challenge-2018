@@ -17,7 +17,7 @@ It's pretty obvious what **onCreate** and **md5** (hashing the given string). So
 ```
 
 So, it's pretty basic stuff.<br>
-The function gets a username and a password from the user, combine them into one string ([username]:[password]), hash it (using md5) and comparing the hash to **"263c7fa932b26a56ec0ad76b94aff98b"**. All if it happens in the if:
+The function gets a username and a password from the user, combine them into one string ([username]:[password]), hash it (using md5) and comparing the hash to **"263c7fa932b26a56ec0ad76b94aff98b"**. All of it happens in the if:
 ```java
 if (MainActivity.md5(password.getText() + ":" + ((EditText) MainActivity.this.findViewById(C0194R.id.editText)).getText()).equals("263c7fa932b26a56ec0ad76b94aff98b"))
 ```
