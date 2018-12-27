@@ -19,7 +19,7 @@ public native boolean check(String str);
 ```
 Ok. So we should look for the **check** function.<br><br>
 
-In the root directory of the decompiled APK, there is a _lib_ directory. In this directory, there are various of sub-directories, containing architectures (arm64-v8a, armeabi, armeabi-v7a, mips, x86, x86_64). Probably most of the people would choose the x86 family architecture. But I really like ARM so I decided to analyze the armeabi library.<br><br>
+In the root directory of the decompiled APK, there is a _lib_ directory. In this directory, there are various of sub-directories, containing architectures' names (arm64-v8a, armeabi, armeabi-v7a, mips, x86, x86_64). Probably most of the people would choose the x86 family architecture. But I really like ARM so I decided to analyze the armeabi library.<br><br>
 Using the command ```arm-linux-gnueabihf-objdump -D libnative-lib.so```, I could disassemble the library and start to reverse the function's assembly code.<br><br>
 
 The function was found at the address 0x5ac.
