@@ -192,4 +192,54 @@ private String mf(String p1, String p2, String p3) {
 }
 ```
 
+First, the function initialize the _f_ variable (which may contain the flag), two booleans as false (<i>fe_found</i> and <i>ed_found</i>), an index variable (_i_) and the SHA-512 of _p3_.<br>
+Let's look at the first while loop.
+```java
+while (true) {
+    if (!fe_found && sha512.charAt(i) == 'f' && sha512.charAt(i + 1) == 'e') {
+        f = f + Character.toString(sha512.charAt(i)) + Character.toString(sha512.charAt(i + 1));
+        fe_found = true;
+        i = 0;
+    } else if (!fe_found || ed_found || sha512.charAt(i) != 'e' || sha512.charAt(i + 1) != 'd') {
+        if (ed_found && sha512.charAt(i) == '3') {
+            break;
+        }
+    } else {
+        f = f + Character.toString(sha512.charAt(i)) + Character.toString(sha512.charAt(i + 1)) + "_";
+        ed_found = true;
+        i = 0;
+    }
+    i++;
+}
+```
+There are 3 conditions in this loop:
+<ol>
+    <li>If the hash contains "fe" in the i-th index. If it does, then add "fe" to the flag, change the <i>fe_found</i> flag to true and reset the index.</li>
+    <li>If "fe" not found or "ed" found or the i-th character is not "e" or the (i+1)-th charactr is not "d", then it will check if the i-th character is 3. If it does, then it will exit the loop.</li>
+    <li>Otherwise, add the i-th character and the (i+1)-th character to the flag.</li>
+</ol>
+Let's explain few stuff.<br>
+First, if the i-th character is not "e" or "f" and the (i+1)-th character is not "d" or "e", then the program will probably won't change anything in the current iteration but _i_.<br>
+Second, apparently "fe" will appear before "ed" in all the 2814977 SHA-512 hashes of _p3_.<br>
+Last but not least, after "fe" and "ed" were found, the program will basically search for "3".<br>
+So to conclude the loop break down, at the end of the loop _f_ should contain "feed_" and i should be equal to the position of the first "3" character in the hash.<br><br>
 
+Now let's break the second loop,
+```java
+f = (f + Character.toString('m') + Character.toString(sha512.charAt(i)) + "_") + Character.toString(p1.charAt(1)) + Character.toString(p2.charAt(0));
+i = 0;
+String md5 = m4h(p1, "md5");
+while (true) {
+    if (md5.charAt(i) == '1' && md5.charAt(i + 1) == 'a') {
+        return (f + Character.toString(md5.charAt(i + 1))) + "gs";
+    }
+    i++;
+}
+```
+The first line adds "m", the i-th character in the SHA-512 hash (should be "3"), "_", the second character of _p1_ (reminder - should be "f") and the first character to _p1_ (there are some possibilities but let's say the letter "l").<br>
+Now, the flag is "feed_m3_fl".<br>
+In the loop, the condition is actually looking for the first "1a" sequence in the MD5 hash of _p1_ (reminder - must be in the hash).<br>
+When it finds it, it will return _f_ with "a" and "gs". So the return value would be "feed_m3_flags).<br><br>
+
+So to conclude, there are a lot of possibilities (as I found out - I may be wrong) to the QR code and the flag.<br>
+But I guess the idea was that the flag would be **feed_m3_flags**.
