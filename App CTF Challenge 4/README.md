@@ -152,10 +152,10 @@ A SHA-512 is calculated from _p3_, and some stuff is getting checked in _p1_ and
   <li>The first character of <i>p1</i> shouldn't be "i".  Narrows down from 998 possibilities to 988.</li>
   <li>The hash of <i>p3</i> should contain "3". Narrows down from 16777216 possibilities to 16772988.</li>
   <li>The hash of <i>p3</i> should contain "ed". Narrows down from 16772988 possibilities to 6592815.</li>
-  <li>The hash of <i>p3</i> should contain "fe". Narrows down from 6592815 possibilities to 2750561.</li>
+  <li>The hash of <i>p3</i> should contain "fe". Narrows down from 6592815 possibilities to 2814977.</li>
 </ol><br>
 
-So for _p1_ there are 988 possibilities, _p2_ 100 possibilities and _p3_ 2750561 possibilities. Let's check if the function **mf** decreases the number of possibilities.<br><br>
+So for _p1_ there are 988 possibilities, _p2_ 100 possibilities and _p3_ 2814977 possibilities. Let's check if the function **mf** decreases the number of possibilities.<br><br>
 
 ```java
 private String mf(String p1, String p2, String p3) {
@@ -191,3 +191,5 @@ private String mf(String p1, String p2, String p3) {
     }
 }
 ```
+
+
