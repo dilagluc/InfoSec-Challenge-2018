@@ -22,4 +22,4 @@ The function gets a username and a password from the user, combine them into one
 if (MainActivity.md5(password.getText() + ":" + ((EditText) MainActivity.this.findViewById(C0194R.id.editText)).getText()).equals("263c7fa932b26a56ec0ad76b94aff98b"))
 ```
 <br><br>
-I don't know any other way than brute-force to reverse a hash. So by using _hashcat_ (thank god for the GPUs), after some time I got a match - **p@5s:admin**.
+I don't know any other way besides brute-forcing to reverse a hash. So by using _hashcat_ (thank god for the GPUs), after some time I got a match - **p@5s:admin**.
